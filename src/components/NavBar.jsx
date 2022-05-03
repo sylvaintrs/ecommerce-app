@@ -7,6 +7,9 @@ function NavBar() {
 
         <ol>
           <li>Home</li>
+          <li>Shop</li>
+          <li>Blog</li>
+          <li>Contact</li>
         </ol>
 
         <div className="cart">

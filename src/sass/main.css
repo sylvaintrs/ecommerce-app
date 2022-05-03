@@ -15,39 +15,95 @@ li {
   font-family: "Poppins";
 }
 
+p {
+  font-family: "Poppins";
+}
+
 .App {
-  z-index: 0;
   position: relative;
   width: 100%;
-  height: 100vh;
   background-color: #ffebc2;
 }
 
-.App::before {
-  z-index: -1;
-  content: '';
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 90%;
-  height: 50%;
-  background: linear-gradient(120deg, #ffc637, #fec00a);
-  border-radius: 2rem;
-}
-
-nav {
+.home {
+  z-index: 0;
+  position: relative;
   width: 100%;
-  height: 15vh;
+  height: 90vh;
+  padding: 2rem 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.home h2 {
+  font-size: 3rem;
+}
+
+.home::before {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 90%;
+  height: 50%;
+  background: radial-gradient(circle, #ff8307 0%, #f9c93e 9%, #ffcd50 10%, #fec00a 11%, #ffcd35 28%, #ffd03e 29%, #f3ca43 30%, #ffa907 59%, #f9c93e 100%);
+  border-radius: 2rem;
+}
+
+.home .container-cards {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav {
+  width: 100%;
+  height: 10vh;
+  padding: 0 4.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav ol {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav ol li {
+  font-weight: 700;
 }
 
 nav .cart {
@@ -64,6 +120,214 @@ nav .cart:hover {
 }
 
 nav .cart svg {
-  width: 20px;
+  width: 15px;
+}
+
+.cart-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100vh;
+  padding: 2rem 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: white;
+}
+
+.cart-overlay .closing-cross {
+  position: absolute;
+  top: 5%;
+  right: 8%;
+  cursor: pointer;
+}
+
+.cart-overlay .closing-cross svg {
+  width: 25px;
+}
+
+.cart-overlay .closing-cross svg:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.cart-overlay h3 {
+  font-size: 2rem;
+}
+
+.cart-overlay .list-item {
+  width: 95%;
+  height: 85%;
+  overflow-y: scroll;
+}
+
+.cart-overlay .resume-cart {
+  width: 97%;
+  height: 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart-overlay .resume-cart button {
+  width: 40%;
+  height: 60%;
+  background: #b71919d4;
+  color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.cart-overlay .resume-cart button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.homeCard {
+  z-index: 0;
+  position: relative;
+  width: 280px;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fffbf7;
+  border-radius: 2rem;
+}
+
+.homeCard .product-image {
+  z-index: 0;
+  position: relative;
+  width: 100%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: radial-gradient(orange, #ffffff00 70%);
+}
+
+.homeCard .product-image::before {
+  z-index: 1;
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 70%;
+  height: 50%;
+  background-color: #453f9c;
+  border-radius: 1rem;
+}
+
+.homeCard .product-image img {
+  z-index: 2;
+  width: 60%;
+}
+
+.homeCard h4 {
+  color: #482e97;
+}
+
+.homeCard p {
+  color: gray;
+}
+
+.homeCard button {
+  width: 70%;
+  height: 40px;
+  background: #ffffff00;
+  border: 2px solid #482e97;
+  color: #482e97;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.homeCard button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.cart-item {
+  width: 97%;
+  height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart-item .item-image {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart-item .item-image img {
+  width: 70%;
+}
+
+.cart-item button {
+  background: #7f232300;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-item button svg {
+  width: 15px;
 }
 /*# sourceMappingURL=main.css.map */
