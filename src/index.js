@@ -5,8 +5,10 @@ import App from './App';
 
 import { Provider } from 'react-redux'
 
-import store from './redux/Reducer'
+import store from './redux/store-redux'
+import { getTotalAmount } from './redux/Reducers/Cart-Slice';
 
+store.dispatch(getTotalAmount())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
